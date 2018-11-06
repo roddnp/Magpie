@@ -31,14 +31,41 @@ public class Magpie2 {
 	 */
 	public String getResponse(String statement) {
 		String response = "";
-		if (statement.indexOf("no") >= 0) {
+		if (statement.indexOf("no") >= 0) 
+		{
 			response = "Why so negative?";
-		} else if (statement.indexOf("mother") >= 0
+		} 
+		else if (statement.indexOf("mother") >= 0
 				|| statement.indexOf("father") >= 0
 				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0) {
+				|| statement.indexOf("brother") >= 0 ) 
+		{
 			response = "Tell me more about your family.";
-		} else {
+		} 
+		else if (statement.indexOf("hi")>=0)
+		{
+			response = "hey whats up";
+		}
+		else if (statement.indexOf("hiep")>=0
+				|| statement.indexOf("daviet")>=0)
+		{
+			response = "one of the boys";
+		}
+		else if (statement.indexOf("cat") >=0 
+				|| statement.indexOf("dog") >=0)
+		{
+			response = "Tell me more about your pets.";
+		}
+		else if (statement.indexOf("Padjen") >= 0)
+		{
+			response = "He seems like a good teacher.";
+		}
+		else if (statement.length() < 1)
+		{
+			response = "Say something please";
+		}
+		else 
+		{
 			response = getRandomResponse();
 		}
 		return response;
@@ -50,19 +77,33 @@ public class Magpie2 {
 	 * @return a non-committal string
 	 */
 	private String getRandomResponse() {
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 5;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
 
-		if (whichResponse == 0) {
+		if (whichResponse == 0) 
+		{
 			response = "Interesting, tell me more.";
-		} else if (whichResponse == 1) {
+		} 
+		else if (whichResponse == 1) {
 			response = "Hmmm.";
-		} else if (whichResponse == 2) {
+		} 
+		else if (whichResponse == 2) 
+		{
 			response = "Do you really think so?";
-		} else if (whichResponse == 3) {
+		} 
+		else if (whichResponse == 3) 
+		{
 			response = "You don't say.";
+		}
+		else if (whichResponse == 4)
+		{
+			response = "Thats cool";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "wow, good to know";
 		}
 
 		return response;
