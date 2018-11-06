@@ -36,7 +36,30 @@ public class Magpie3 {
 				|| findKeyword(statement, "sister") >= 0
 				|| findKeyword(statement, "brother") >= 0) {
 			response = "Tell me more about your family.";
-		} else {
+		} 
+		else if (findKeyword(statement,"hi")>=0)
+		{
+			response = "hey whats up";
+		}
+		else if (findKeyword(statement,"hiep")>=0
+				|| findKeyword(statement,"daviet")>=0)
+		{
+			response = "one of the boys";
+		}
+		else if (findKeyword(statement,"cat") >=0 
+				|| statement.indexOf("dog") >=0)
+		{
+			response = "Tell me more about your pets.";
+		}
+		else if (findKeyword(statement,"Padjen") >= 0)
+		{
+			response = "He seems like a good teacher.";
+		}
+		else if (statement.length() < 1)
+		{
+			response = "Say something please";
+		}
+		else {
 			response = getRandomResponse();
 		}
 		return response;
